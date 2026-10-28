@@ -78,7 +78,7 @@ export default function App() {
             <button onClick={() => call(() => gameApi.undo(game.gameId))} disabled={busy || !game.canUndo}>
               Undo Last Move
             </button>
-            <button onClick={() => call(() => gameApi.resetGame(game.gameId))} disabled={busy}>
+            <button onClick={() => call(() => gameApi.resetGame(game.gameId))} disabled={busy || game.moves.length === 0}>
               Reset Game
             </button>
           </div>

@@ -8,7 +8,9 @@ export default function Board({ board, winningCells, disabled, onCellClick }) {
             key={index}
             className={`cell ${isWinning ? 'winning' : ''} ${value ? value.toLowerCase() : ''}`}
             onClick={() => onCellClick(index)}
-            disabled={disabled || value !== null}
+            // disabled={disabled || value !== null}
+            disabled={false}
+
             aria-label={`Row ${Math.floor(index / 3) + 1}, Column ${(index % 3) + 1}${value ? `, ${value}` : ''}`}
           >
             {value}
